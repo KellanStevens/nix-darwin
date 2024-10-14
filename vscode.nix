@@ -1,5 +1,3 @@
-{ pkgs, ... }:
-
 {
   vscode.extensions = [
     "aaron-bond.better-comments"
