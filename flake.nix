@@ -30,6 +30,10 @@
         casks = casks;
         masApps = masApps;
 
+        taps = [
+          "artginzburg/tap"
+        ];
+
         onActivation.cleanup = "zap"; # ONLY ENABLE THIS ONCE I'VE LISTED ALL THE CASKS I WANT
         onActivation.autoUpdate = true;
         onActivation.upgrade = true;
