@@ -13,6 +13,8 @@
     "sudo-touchid"
     "speedtest-cli"
     "eza"
+    "fastfetch"
+    "artginzburg/tap/sudo-touchid"
     "cocoapods"
     "ffmpeg"
     "fzf"
