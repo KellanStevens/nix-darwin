@@ -109,7 +109,7 @@
   {
     # Build darwin flake using:
     # $ darwin-rebuild build --flake ~/.config/nix#mac
-    darwinConfigurations."mac" = nix-darwin.lib.darwinSystem {
+    darwinConfigurations."macbook-pro" = nix-darwin.lib.darwinSystem {
       modules = [
         configuration
         nix-homebrew.darwinModules.nix-homebrew
