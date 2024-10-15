@@ -14,14 +14,20 @@
     formula = import ./formula.nix;
     masApps = import ./masApps.nix;
 
-    configuration = { pkgs, config, ... }: {
-
+    configuration = { pkgs, config, ... }: let
+    vsCode = import ./vscode.nix { inherit pkgs; };
+    in {
       nixpkgs.config.allowUnfree = true;
 
       # List packages installed in system profile. To search by name, run:
       # $ nix-env -qaP | grep wget
-      environment.systemPackages = [
-        pkgs.mkalias
+      environment.systemPackages = with pkgs; [
+        mkalias
+        keka
+        warp-terminal
+        obsidian
+        rectangle
+        vsCode.vscode
       ];
 
       homebrew = {
@@ -45,11 +51,11 @@
 
       # Activation script to handle symlinks for Homebrew packages.
       system.activationScripts.symlinks = ''
-        # Create symlinks for Homebrew packages
         brew link --overwrite php@8.1
         brew link --overwrite python@3.9
       '';
 
+      # Activation script fix spotlight indexing.
       system.activationScripts.applications.text = let
         env = pkgs.buildEnv {
           name = "system-applications";
@@ -68,7 +74,7 @@
           echo "copying $src" >&2
           ${pkgs.mkalias}/bin/mkalias "$src" "/Applications/Nix Apps/$app_name"
         done
-            '';
+          '';
 
       system.defaults = {
         dock.autohide = true;
