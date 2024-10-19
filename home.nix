@@ -8,10 +8,6 @@ in
 {
     home.stateVersion = "24.11"; # Please read the comment before changing.
 
-    home.packages = [
-        # (pkgs.nerdfonts.override { fonts = [ "Hack" "JetBrainsMono" ]; })
-    ];
-
     home.file = {
         # # Building this configuration will create a copy of 'dotfiles/screenrc' in
         # # the Nix store. Activating the configuration will then make '~/.screenrc' a

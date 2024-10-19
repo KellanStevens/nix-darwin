@@ -24,7 +24,6 @@
         warp-terminal
         obsidian
         rectangle
-        (import ./vscode.nix { inherit pkgs; }).vscode
       ];
 
       fonts.packages = with pkgs; [
