@@ -2,13 +2,15 @@
   description = "Kellan's Darwin flake";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    nix-darwin.url = "github:LnL7/nix-darwin";
-    nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
+    home-manager.url = "github:nix-community/home-manager";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    darwin.inputs.nixpkgs.follows = "nixpkgs";
+    darwin.url = "github:LnL7/nix-darwin";
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew }:
+  outputs = inputs@{ self, darwin, nixpkgs, nix-homebrew, home-manager }:
   let
     casks = import ./casks.nix;
     formula = import ./formula.nix;
@@ -110,7 +112,7 @@
   {
     # Build darwin flake using:
     # $ darwin-rebuild build --flake ~/.config/nix#macbook-pro
-    darwinConfigurations."macbook-pro" = nix-darwin.lib.darwinSystem {
+    darwinConfigurations."macbook-pro" = darwin.lib.darwinSystem {
       modules = [
         configuration
         nix-homebrew.darwinModules.nix-homebrew
