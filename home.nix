@@ -3,7 +3,7 @@
 { config, pkgs, ... }:
 
 let
-    vscodeConfig = import ./vscode.nix { inherit config pkgs; };
+    vscodeConfig = import ./apps/vscode/vscode.nix { inherit config pkgs; };
 in
 {
     home.stateVersion = "24.11"; # Please read the comment before changing.
