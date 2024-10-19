@@ -32,9 +32,9 @@
 
       homebrew = {
         enable = true;
-        brews = import ./formula.nix;
-        casks = import ./casks.nix;
-        masApps = import ./masApps.nix;
+        brews = import ./apps/formula.nix;
+        casks = import ./apps/casks.nix;
+        masApps = import ./apps/masApps.nix;
 
         taps = [
           "artginzburg/tap"
