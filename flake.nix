@@ -91,6 +91,7 @@
 
       # Necessary for using flakes on this system.
       nix.settings.experimental-features = "nix-command flakes";
+      nix.extraOptions = ''warn-dirty = false'';
 
       # Create /etc/zshrc that loads the nix-darwin environment.
       programs.zsh.enable = true;
@@ -108,7 +109,7 @@
   in
   {
     # Build darwin flake using:
-    # $ darwin-rebuild build --flake ~/.config/nix#mac
+    # $ darwin-rebuild build --flake ~/.config/nix#macbook-pro
     darwinConfigurations."macbook-pro" = nix-darwin.lib.darwinSystem {
       modules = [
         configuration
