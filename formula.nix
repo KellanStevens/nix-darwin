@@ -18,7 +18,6 @@
     "cocoapods"
     "ffmpeg"
     "fzf"
-    "neovim"
     "ollama"
     "nvm"
     "gh"

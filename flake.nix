@@ -12,31 +12,30 @@
 
   outputs = inputs@{ self, darwin, nixpkgs, nix-homebrew, home-manager }:
   let
-    casks = import ./casks.nix;
-    formula = import ./formula.nix;
-    masApps = import ./masApps.nix;
-
-    configuration = { pkgs, config, ... }: let
-    vsCode = import ./vscode.nix { inherit pkgs; };
-    in {
+    configuration = { pkgs, config, ... }: {
       nixpkgs.config.allowUnfree = true;
 
       # List packages installed in system profile. To search by name, run:
       # $ nix-env -qaP | grep wget
       environment.systemPackages = with pkgs; [
         mkalias
+        neovim
         keka
         warp-terminal
         obsidian
         rectangle
-        vsCode.vscode
+        (import ./vscode.nix { inherit pkgs; }).vscode
+      ];
+
+      fonts.packages = with pkgs; [
+        (pkgs.nerdfonts.override { fonts = [ "Hack" "JetBrainsMono" ]; })
       ];
 
       homebrew = {
         enable = true;
-        brews = formula;
-        casks = casks;
-        masApps = masApps;
+        brews = import ./formula.nix;
+        casks = import ./casks.nix;
+        masApps = import ./masApps.nix;
 
         taps = [
           "artginzburg/tap"
@@ -46,10 +45,6 @@
         onActivation.autoUpdate = true;
         onActivation.upgrade = true;
       };
-
-      fonts.packages = with pkgs; [
-        (pkgs.nerdfonts.override { fonts = [ "Hack" "JetBrainsMono" ]; })
-      ];
 
       # Activation script to handle symlinks for Homebrew packages.
       system.activationScripts.symlinks = ''
@@ -76,7 +71,7 @@
           echo "copying $src" >&2
           ${pkgs.mkalias}/bin/mkalias "$src" "/Applications/Nix Apps/$app_name"
         done
-          '';
+      '';
 
       system.defaults = {
         dock.autohide = true;
@@ -86,6 +81,10 @@
         NSGlobalDomain.AppleICUForce24HourTime = true;
         NSGlobalDomain.AppleInterfaceStyle = "Dark";
         trackpad.TrackpadThreeFingerDrag = true;
+      };
+
+      users.users.kellan = {
+        home = "/Users/kellan";
       };
 
       # Auto upgrade nix package and the daemon service.
@@ -124,10 +123,20 @@
             autoMigrate = true;
           };
         }
+        home-manager.darwinModules.home-manager
+          {
+
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.kellan = import ./home.nix;
+
+            # Optionally, use home-manager.extraSpecialArgs to pass
+            # arguments to home.nix
+          }
       ];
     };
 
     # Expose the package set, including overlays, for convenience.
-    darwinPackages = self.darwinConfigurations."mac".pkgs;
+    darwinPackages = self.darwinConfigurations."macbook-pro".pkgs;
   };
 }
