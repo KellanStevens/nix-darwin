@@ -16,4 +16,6 @@
     home.file.".zshrc".source = ./.dotfiles/zsh/.zshrc;
     home.file.".zsh/aliases.zsh".source = ./.config/zsh/aliases.zsh;
     home.file.".zsh/keybindings.zsh".source = ./.config/zsh/keybindings.zsh;
+
+    home.file.".config/nvim/init.vim".source = ./.config/nvim/init.vim;
 }
