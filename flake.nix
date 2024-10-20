@@ -30,23 +30,8 @@
         (pkgs.nerdfonts.override { fonts = [ "Hack" "JetBrainsMono" ]; })
       ];
 
-      homebrew = {
-        enable = true;
-        brews = import ./apps/homebrew/formula.nix;
-        casks = import ./apps/homebrew/casks.nix;
-        masApps = import ./apps/homebrew/masApps.nix;
-        taps = import ./apps/homebrew/taps.nix;
-
-        onActivation.cleanup = "zap";
-        onActivation.autoUpdate = true;
-        onActivation.upgrade = true;
-      };
-
-      # Activation script to handle symlinks for Homebrew packages.
-      system.activationScripts.symlinks = ''
-        brew link --overwrite php@8.1
-        brew link --overwrite python@3.9
-      '';
+      # Import Homebrew configuration
+      imports = [ ./apps/homebrew/configuration.nix ];
 
       # Activation script fix spotlight indexing.
       system.activationScripts.applications.text = let
