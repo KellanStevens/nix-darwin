@@ -3,10 +3,10 @@
 {
   homebrew = {
     enable = true;
-    brews = import ./formula.nix;
-    casks = import ./casks.nix;
-    masApps = import ./masApps.nix;
     taps = import ./taps.nix;
+    casks = import ./casks.nix;
+    brews = import ./formula.nix;
+    masApps = import ./masApps.nix;
 
     onActivation.cleanup = "zap";
     onActivation.autoUpdate = true;

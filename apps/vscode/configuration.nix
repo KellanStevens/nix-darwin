@@ -6,7 +6,7 @@ config = {
     userSettings = import ./settings.nix;
     keybindings = import ./keybindings.nix;
     extensions = (import ./extensions.nix { pkgs = pkgs; })
-      ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace (import ./extensionsFromVscodeMarketplace.nix { pkgs = pkgs; });
+      ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace (import ./extensionsFromMarketplace.nix { pkgs = pkgs; });
   };
 };
 }
