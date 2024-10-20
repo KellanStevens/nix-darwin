@@ -35,12 +35,9 @@
         brews = import ./apps/homebrew/formula.nix;
         casks = import ./apps/homebrew/casks.nix;
         masApps = import ./apps/homebrew/masApps.nix;
+        taps = import ./apps/homebrew/taps.nix;
 
-        taps = [
-          "artginzburg/tap"
-        ];
-
-        onActivation.cleanup = "zap"; # ONLY ENABLE THIS ONCE I'VE LISTED ALL THE CASKS I WANT
+        onActivation.cleanup = "zap";
         onActivation.autoUpdate = true;
         onActivation.upgrade = true;
       };
