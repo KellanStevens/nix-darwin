@@ -3,18 +3,10 @@ config = {
   programs.vscode = {
     enable = true;
 
-    keybindings = [
-      {
-        key = "shift+cmd+2";
-        command = "editor.action.changeAll";
-        when = "editorTextFocus && !editorReadonly";
-      }
-    ];
-
+    userSettings = import ./settings.nix;
+    keybindings = import ./keybindings.nix;
     extensions = (import ./extensions.nix { pkgs = pkgs; })
       ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace (import ./extensionsFromVscodeMarketplace.nix { pkgs = pkgs; });
-
-    userSettings = import ./settings.nix;
   };
 };
 }

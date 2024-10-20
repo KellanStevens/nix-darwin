@@ -137,4 +137,4 @@
   "update.mode" = "manual";
   "workbench.statusBar.visible"= false;
   "vscode_custom_css.imports" = ["file:///Users/kellan/.vscode/vscode.css"];
-};
+}
