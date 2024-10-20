@@ -5,7 +5,7 @@
 {
     home.stateVersion = "24.11";
 
-    programs.vscode = (import ./apps/vscode.nix { inherit config pkgs; }).config.programs.vscode;
+    programs.vscode = (import ./apps/vscode/configuration.nix { inherit config pkgs; }).config.programs.vscode;
 
     programs.home-manager.enable = true;
 
