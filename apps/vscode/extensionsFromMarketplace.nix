@@ -18,6 +18,12 @@
       version = "latest";
       sha256 = "sha256-pVGBJjPrpjBapR9TyILgbAfpHSHXfGQMpEBwTrD3T18=";
   }
+  {
+      name = "subtle-brackets";
+      publisher = "rafamel";
+      version = "latest";
+      sha256 = "sha256-Y6DU+Qmyu/Q4X1m4u/pOcKQjz1ceXyjTLLmjvKp8HPM=";
+  }
   # Languages
   {
       name = "twig-language-2";
