@@ -22,4 +22,5 @@
     "nvm"
     "gh"
     "bpytop"
+    "ripgrep"
 ]
