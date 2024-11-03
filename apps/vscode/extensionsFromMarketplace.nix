@@ -94,4 +94,10 @@
       version = "latest";
       sha256 = "sha256-CQVtMdt/fZcNIbH/KybJixnLqCsz5iF1U0k+GfL65Ok=";
   }
+  {
+      name = "figma-vscode-extension";
+      publisher = "figma";
+      version = "latest";
+      sha256 = "sha256-3D9z/eHoIAhySLabnhtQCNqSDh7b30XXaBrGeL0zZwA=";
+  }
 ]
