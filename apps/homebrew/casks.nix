@@ -24,4 +24,5 @@
     "android-studio"
     "balenaetcher"
     "cloudflare-warp"
+    "utm"
 ]
