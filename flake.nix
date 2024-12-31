@@ -13,55 +13,38 @@
   outputs = inputs@{ self, darwin, nixpkgs, nix-homebrew, home-manager }:
   let
     configuration = { pkgs, config, ... }: {
-      nixpkgs.config.allowUnfree = true;
-
-      # List packages installed in system profile. To search by name, run:
-      # $ nix-env -qaP | grep wget
-      environment.systemPackages = with pkgs; [
-        mkalias
-        neovim
-        keka
-        warp-terminal
-        obsidian
-        rectangle
-      ];
-
-      fonts.packages = with pkgs; [
-        (pkgs.nerdfonts.override { fonts = [ "Hack" "JetBrainsMono" ]; })
-      ];
-
       # Import Homebrew configuration
       imports = [ ./apps/homebrew/configuration.nix ];
 
-      # Activation script fix spotlight indexing.
-      system.activationScripts.applications.text = let
-        env = pkgs.buildEnv {
-          name = "system-applications";
-          paths = config.environment.systemPackages;
-          pathsToLink = "/Applications";
-        };
-      in
-        pkgs.lib.mkForce ''
-        # Set up applications.
-        echo "setting up /Applications..." >&2
-        rm -rf /Applications/Nix\ Apps
-        mkdir -p /Applications/Nix\ Apps
-        find ${env}/Applications -maxdepth 1 -type l -exec readlink '{}' + |
-        while read src; do
-          app_name=$(basename "$src")
-          echo "copying $src" >&2
-          ${pkgs.mkalias}/bin/mkalias "$src" "/Applications/Nix Apps/$app_name"
-        done
-      '';
-
       system.defaults = {
-        dock.autohide = true;
-        dock.autohide-delay = 0.0;
-        dock.mru-spaces = false;
+        dock = {
+          autohide = true;
+          autohide-delay = 0.0;
+          mru-spaces = false;
+        };
+
+        finder = {
+          _FXShowPosixPathInTitle = true;  # show full path in finder title
+          AppleShowAllExtensions = true;  # show all file extensions
+          FXEnableExtensionChangeWarning = false;  # disable warning when changing file extension
+          QuitMenuItem = true;  # enable quit menu item
+          ShowPathbar = true;  # show path bar
+          ShowStatusBar = true;  # show status bar
+        };
+
+        trackpad = {
+          Clicking = true;  # enable tap to click
+          TrackpadRightClick = true;  # enable two finger right click
+          TrackpadThreeFingerDrag = true;  # enable three finger drag
+        };
+
+        NSGlobalDomain = {
+          "com.apple.swipescrolldirection" = true;  # enable natural scrolling(default to true)
+          AppleICUForce24HourTime = true;  # use 24-hour time
+          AppleInterfaceStyle = "Dark";  # use dark mode
+
+        };
         loginwindow.GuestEnabled = false;
-        NSGlobalDomain.AppleICUForce24HourTime = true;
-        NSGlobalDomain.AppleInterfaceStyle = "Dark";
-        trackpad.TrackpadThreeFingerDrag = true;
       };
 
       users.users.kellan = {
