@@ -19,5 +19,6 @@
 
     home.file.".config/ohmyposh/config.toml".source = ./.config/ohmyposh/config.toml;
 
-    home.file.".config/vscode/settings.json".source = ./.config/vscode/settings.json;
+    home.file.".config/vscode/style.css".source = ./.config/vscode/style.css;
+    home.file."Library/Application Support/Code/User/settings.json".source = ./.config/vscode/settings.json;
 }
