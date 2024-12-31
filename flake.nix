@@ -14,7 +14,7 @@
   let
     configuration = { pkgs, config, ... }: {
       # Import Homebrew & System configuration
-      imports = [ ./modules/apps/configuration.nix ./.modules/system/configuration.nix ];
+      imports = [ ./modules/apps/configuration.nix ./modules/system/configuration.nix ];
 
       fonts.packages = with pkgs; [
         nerd-fonts.jetbrains-mono
