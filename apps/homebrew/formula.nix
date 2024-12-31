@@ -1,5 +1,4 @@
 [
-    "artginzburg/tap/sudo-touchid"
     "bpytop"
     "composer"
     "eza"
