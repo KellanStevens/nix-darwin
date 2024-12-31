@@ -35,23 +35,23 @@
     // Prettier
     "[javascript]" : {
     "editor.defaultFormatter" : "esbenp.prettier-vscode",
-    "editor.formatOnSave" : true,
+    "editor.formatOnSave" : true
     },
     "[typescriptreact]" : {
         "editor.defaultFormatter" : "esbenp.prettier-vscode",
-        "editor.formatOnSave" : true,
+        "editor.formatOnSave" : true
     },
     "[tailwindcss]" : {
         "editor.defaultFormatter" : "esbenp.prettier-vscode",
-        "editor.formatOnSave" : true,
+        "editor.formatOnSave" : true
     },
     "[vue]" : {
         "editor.defaultFormatter" : "esbenp.prettier-vscode",
-        "editor.formatOnSave" : true,
+        "editor.formatOnSave" : true
     },
     "[javascriptreact]" : {
         "editor.defaultFormatter" : "esbenp.prettier-vscode",
-        "editor.formatOnSave" : true,
+        "editor.formatOnSave" : true
     },
     "prettier.requireConfig" : true,
     "prettier.useEditorConfig" : false,
@@ -61,16 +61,16 @@
     "files.autoSave" : "afterDelay",
     "[css]" : {
         "editor.defaultFormatter" : "esbenp.prettier-vscode",
-        "editor.formatOnSave" : true,
+        "editor.formatOnSave" : true
     },
     "editor.quickSuggestions" : {
-        "strings" : true,
+        "strings" : true
     },
     "[jsonc]" : {
-        "editor.defaultFormatter" : "esbenp.prettier-vscode",
+        "editor.defaultFormatter" : "esbenp.prettier-vscode"
     },
     "[json]" : {
-        "editor.defaultFormatter" : "vscode.json-language-features",
+        "editor.defaultFormatter" : "vscode.json-language-features"
     },
 
     // Search
@@ -86,7 +86,7 @@
         "**/composer.lock" : true,
         "**/package-lock.json" : true,
         "storage" : true,
-        ".phpunit.result.cache" : true,
+        ".phpunit.result.cache" : true
     },
 
     // Silence the Noise
@@ -121,8 +121,8 @@
         "transparent" : true,
         "trafficLightPosition" : {
             "x" : 25,
-            "y" : 40,
-        },
+            "y" : 40
+        }
     },
     "window.commandCenter" : false,
     "workbench.layoutControl.enabled" : false,
@@ -137,5 +137,5 @@
     "update.mode" : "manual",
     "workbench.statusBar.visible": false,
     "extensions.ignoreRecommendations" : false,
-    "vscode_custom_css.imports" : ["file:///Users/kellan/.vscode/vscode.css"],
+    "vscode_custom_css.imports" : ["file:///Users/kellan/.config/vscode/style.css"]
   }
