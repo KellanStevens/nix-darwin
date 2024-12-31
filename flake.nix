@@ -13,39 +13,14 @@
   outputs = inputs@{ self, darwin, nixpkgs, nix-homebrew, home-manager }:
   let
     configuration = { pkgs, config, ... }: {
-      # Import Homebrew configuration
-      imports = [ ./apps/homebrew/configuration.nix ];
+      # Import Homebrew & System configuration
+      imports = [ ./modules/apps/configuration.nix ./.modules/system/configuration.nix ];
 
-      system.defaults = {
-        dock = {
-          autohide = true;
-          autohide-delay = 0.0;
-          mru-spaces = false;
-        };
-
-        finder = {
-          _FXShowPosixPathInTitle = true;  # show full path in finder title
-          AppleShowAllExtensions = true;  # show all file extensions
-          FXEnableExtensionChangeWarning = false;  # disable warning when changing file extension
-          QuitMenuItem = true;  # enable quit menu item
-          ShowPathbar = true;  # show path bar
-          ShowStatusBar = true;  # show status bar
-        };
-
-        trackpad = {
-          Clicking = true;  # enable tap to click
-          TrackpadRightClick = true;  # enable two finger right click
-          TrackpadThreeFingerDrag = true;  # enable three finger drag
-        };
-
-        NSGlobalDomain = {
-          "com.apple.swipescrolldirection" = true;  # enable natural scrolling(default to true)
-          AppleICUForce24HourTime = true;  # use 24-hour time
-          AppleInterfaceStyle = "Dark";  # use dark mode
-
-        };
-        loginwindow.GuestEnabled = false;
-      };
+      fonts.packages = with pkgs; [
+        nerd-fonts.jetbrains-mono
+        nerd-fonts.hack
+        nerd-fonts.iosevka
+      ];
 
       users.users.kellan = {
         home = "/Users/kellan";
