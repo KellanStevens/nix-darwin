@@ -3,6 +3,7 @@ alias ll="eza --icons --group-directories-first -l"
 alias la="eza --icons --group-directories-first -la"
 
 alias grep='grep --color'
+alias cat='bat'
 
 alias brwup='brew upgrade -v && brew upgrade -v -g'
 
