@@ -21,6 +21,6 @@
     "rust"
     "speedtest-cli"
     "tmux"
+    "yarn"
     "zoxide"
-
 ]
