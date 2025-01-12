@@ -136,6 +136,6 @@
     "window.restoreFullscreen" : true,
     "update.mode" : "manual",
     "workbench.statusBar.visible": false,
-    "extensions.ignoreRecommendations" : false,
+    "extensions.ignoreRecommendations" : true,
     "vscode_custom_css.imports" : ["file:///Users/kellan/.config/vscode/style.css"]
   }
