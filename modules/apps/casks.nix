@@ -22,6 +22,7 @@
     "obsidian"
     "oracle-jdk"
     "ray"
+    "raycast"
     "rectangle"
     "setapp"
     "topnotch"
