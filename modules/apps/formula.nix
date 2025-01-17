@@ -1,5 +1,6 @@
 [
     "bpytop"
+    "bat"
     "composer"
     "eza"
     "fastfetch"
@@ -20,6 +21,7 @@
     "rsync"
     "rust"
     "speedtest-cli"
+    "stow"
     "tmux"
     "yarn"
     "zoxide"
