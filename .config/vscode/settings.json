@@ -31,6 +31,10 @@
 
     // PHP
     "php.suggest.basic" : false,
+    "php.validate.executablePath" : "/opt/homebrew/bin/php",
+    "php-cs-fixer.executablePath": "/Users/kellan/stack/services/travel/vendor/bin/php-cs-fixer",
+    "php-cs-fixer.config": "/Users/kellan/stack/utilities/php-cs-fixer/.php-cs-fixer.dist.php",
+    "php-cs-fixer.onsave": true,
 
     // Prettier
     "[javascript]" : {
