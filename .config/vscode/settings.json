@@ -36,29 +36,6 @@
     "php-cs-fixer.config": "/Users/kellan/stack/utilities/php-cs-fixer/.php-cs-fixer.dist.php",
     "php-cs-fixer.onsave": true,
 
-    // Prettier
-    "[javascript]" : {
-    "editor.defaultFormatter" : "esbenp.prettier-vscode",
-    "editor.formatOnSave" : true
-    },
-    "[typescriptreact]" : {
-        "editor.defaultFormatter" : "esbenp.prettier-vscode",
-        "editor.formatOnSave" : true
-    },
-    "[tailwindcss]" : {
-        "editor.defaultFormatter" : "esbenp.prettier-vscode",
-        "editor.formatOnSave" : true
-    },
-    "[vue]" : {
-        "editor.defaultFormatter" : "esbenp.prettier-vscode",
-        "editor.formatOnSave" : true
-    },
-    "[javascriptreact]" : {
-        "editor.defaultFormatter" : "esbenp.prettier-vscode",
-        "editor.formatOnSave" : true
-    },
-    "prettier.requireConfig" : true,
-    "prettier.useEditorConfig" : false,
     "explorer.sortOrder" : "type",
     "prettier.tabWidth" : 4,
     "workbench.tree.indent" : 15,
@@ -141,5 +118,20 @@
     "update.mode" : "manual",
     "workbench.statusBar.visible": false,
     "extensions.ignoreRecommendations" : true,
-    "vscode_custom_css.imports" : ["file:///Users/kellan/.config/vscode/style.css"]
+    "vscode_custom_css.imports" : ["file:///Users/kellan/.config/vscode/style.css"],
+
+    "eslint.workingDirectories": ["/Users/kellan/stack/services/travel/lavender"],
+    "eslint.enable": true,
+    "eslint.run": "onSave",
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact"
+    ],
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": "explicit"
+    },
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   }
+
