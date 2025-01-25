@@ -47,6 +47,11 @@
       # $ darwin-rebuild changelog
       system.stateVersion = 5;
 
+      system.activationScripts.homebrew-linking.text = ''
+          brew link --overwrite php@8.1
+          brew link --overwrite python@3.9
+      '';
+
       # The platform the configuration will be used on.
       nixpkgs.hostPlatform = "aarch64-darwin";
     };
