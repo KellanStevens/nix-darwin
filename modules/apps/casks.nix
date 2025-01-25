@@ -21,6 +21,7 @@
     "minecraft"
     "obsidian"
     "oracle-jdk"
+    "responsively"
     "ray"
     "raycast"
     "rectangle"
