@@ -3,9 +3,9 @@
 {
   system.defaults = {
     dock = {
-      autohide = true;
-      autohide-delay = 0.0;
-      mru-spaces = false;
+      autohide = true; # autohide dock
+      autohide-delay = 0.0; # remove autohide delay
+      mru-spaces = false; # disable most recent used spaces
     };
 
     finder = {
@@ -55,8 +55,6 @@
         SHOWFULLNAME = true;  # show full name in login window
       };
     };
-
-    loginwindow.GuestEnabled = false;
   };
 
   security.pam.enableSudoTouchIdAuth = true;
