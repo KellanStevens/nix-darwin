@@ -15,6 +15,7 @@
     "google-chrome"
     "hiddenbar"
     "keka"
+    "latest"
     "licecap"
     "mac-mouse-fix"
     "maccy"
@@ -30,4 +31,5 @@
     "utm"
     "visual-studio-code"
     "vlc"
+    "zen-browser"
 ]
