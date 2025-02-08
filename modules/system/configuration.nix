@@ -26,6 +26,7 @@
       "com.apple.swipescrolldirection" = true;  # enable natural scrolling(default to true)
       AppleICUForce24HourTime = true;  # use 24-hour time
       AppleInterfaceStyle = "Dark";  # use dark mode
+      AppleShowScrollBars = "WhenScrolling";  # show scroll bars only when scrolling
     };
 
     CustomUserPreferences = {
@@ -37,6 +38,11 @@
         _FXSortFoldersFirst = true;
         # When performing a search, search the current folder by default
         FXDefaultSearchScope = "SCcf";
+      };
+
+      "com.apple.Dock" = {
+        wvous-tl-modifier = 1048576; # shift as modifier key
+        wvous-tl-corner = 10; # top left hot corner
       };
 
       "com.apple.desktopservices" = {
