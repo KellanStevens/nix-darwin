@@ -14,6 +14,7 @@
     "github"
     "google-chrome"
     "hiddenbar"
+    "karabiner-elements"
     "keka"
     "latest"
     "licecap"
