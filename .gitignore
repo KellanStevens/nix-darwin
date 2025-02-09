@@ -1,3 +1,8 @@
 .DS_Store
-.config/raycast/*
-.config/composer/*
+.config/*
+!.config/fastfetch
+!.config/karabiner
+!.config/nvim
+!.config/ohmyposh
+!.config/vscode
+!.config/zsh
