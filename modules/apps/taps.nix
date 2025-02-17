@@ -1,3 +1,4 @@
 [
   "artginzburg/tap"
+  "jesseduffield/lazygit"
 ]

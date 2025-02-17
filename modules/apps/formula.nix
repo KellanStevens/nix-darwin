@@ -6,6 +6,7 @@
     "fastfetch"
     "fzf"
     "gh"
+    "lazygit"
     "mas"
     "neovim"
     "nvm"
