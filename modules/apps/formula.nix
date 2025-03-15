@@ -13,6 +13,7 @@
     "oh-my-posh"
     "ollama"
     "php@8.1"
+    "php-cs-fixer"
     "poetry"
     "pre-commit"
     "pyinstaller"
