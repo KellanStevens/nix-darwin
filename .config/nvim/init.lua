@@ -25,7 +25,7 @@ local plugins = {
 
     -- Syntax highlighting
     { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
-    
+
     -- LSP and Autocomplete
     { "neovim/nvim-lspconfig" },
     { "williamboman/mason.nvim" },
@@ -50,7 +50,7 @@ vim.cmd.colorscheme "catppuccin"
 
 -- Telescope setup
 local builtin = require('telescope.builtin')
-vim.keymap.set({'n', 'i', 'v'} , '<D-p>', function()
+vim.keymap.set({'n', 'i', 'v'} , '<leader>p', function()
     builtin.find_files({
         hidden = true,
         previewer = true,
@@ -143,7 +143,7 @@ vim.api.nvim_set_keymap('t', '<D-j>', '<C-\\><C-n>:lua require("toggle_terminal"
 -- LSP setup
 require("mason").setup()
 require("mason-lspconfig").setup({
-    ensure_installed = { "ts_ls", "intelephense", "phpactor", "eslint_d" }
+    ensure_installed = { "ts_ls", "intelephense", "phpactor" }
 })
 
 local lspconfig = require('lspconfig')
