@@ -5,7 +5,7 @@ alias la="eza --icons --group-directories-first -la"
 alias grep='grep --color'
 alias cat='bat'
 
-alias brwup='brew upgrade -v && brew upgrade -v -g'
+alias brwup='brew update -v && brew upgrade -v -g'
 
 alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
 alias pest='./vendor/bin/pest'
@@ -20,4 +20,4 @@ alias android_emu='emulator -avd Pixel_6_Pro_API_35_rootable_ -writable-system -
 
 alias rebuild-nix='darwin-rebuild switch --flake ~/.config/nix'
 
-alias tl='sudo -v && tl'
+alias lgit='lazygit'
