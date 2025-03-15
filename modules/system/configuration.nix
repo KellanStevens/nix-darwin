@@ -41,7 +41,7 @@
       };
 
       "com.apple.Dock" = {
-        wvous-tl-modifier = 1048576; # shift as modifier key
+        wvous-tl-modifier = 131072; # shift as modifier key
         wvous-tl-corner = 10; # top left hot corner
       };
 
@@ -63,5 +63,5 @@
     };
   };
 
-  security.pam.enableSudoTouchIdAuth = true;
+  security.pam.services.sudo_local.touchIdAuth = true;
 }
